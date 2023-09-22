@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>Editar Menu</h1>
+    <hr>
+    <a href="/home">Regresar</a>
+    <form (ngSubmit) = "formularioMenu()" id = "loginFormMenu">
+        <div class="form-group">
+            <label>Id Menu: </label>
+            <input type = "number" class="form-control" [(ngModel)] = "menus.idMenu" [ngModelOptions] = "{standalone: true}" required disabled=»disabled»>
+        </div>
+        <div class="form-group">
+            <label>Id Modulo: </label>
+            <input type = "number" class="form-control" [(ngModel)] = "menus.idModulo" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Nombre: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "menus.nombre" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Orden Menu: </label>
+            <input type = "number" class="form-control" [(ngModel)] = "menus.ordenMenu" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Fecha Creación: </label>
+            <input type = "date" class="form-control" [(ngModel)] = "menus.fechaCreacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Modificación: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "menus.usuarioCreacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Fecha Modificación: </label>
+            <input type = "date" class="form-control" [(ngModel)] = "menus.fechaModificacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Modificación: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "menus.usuarioModificacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Asignado: </label>
+
+            <select  type="text" class="form-control" [(ngModel)]="menus.idMenu"  [ngModelOptions]="{standalone:true}" required>
+                <option *ngFor="let usuer of menus" [value]="usuer.idMenu">{{usuer.nombre}} </option>
+            </select>
+        </div>
+        <br>
+        <input type = "submit" class="btn btn-success" value = "Editar Empresa">
+    </form>
+</div>
+

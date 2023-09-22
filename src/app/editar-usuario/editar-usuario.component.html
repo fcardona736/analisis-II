@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Editar Usuario</h1>
+    <hr>
+    <a href="/home">Regresar</a>
+    <form (ngSubmit) = "formularioUsuario()" id = "loginFormUsuario">
+        <div class="form-group">
+            <label>Id: </label>
+            <input type = "number" class="form-control" [(ngModel)] = "usuarios.idUsuario" [ngModelOptions] = "{standalone: true}" required disabled=»disabled»>
+        </div>
+        <div class="form-group">
+            <label>Nombre: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "usuarios.nombre" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Apellido: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "usuarios.apellido" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Fecha Nacimiento: </label>
+            <input type = "date" class="form-control" [(ngModel)] = "usuarios.fechaNacimiento" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Correo Electronico: </label>
+            <input type = "date" class="form-control" [(ngModel)] = "usuarios.correoElectronico" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Telefono: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "usuarios.telefono" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Asignado: </label>
+
+            <select  type="text" class="form-control" [(ngModel)]="usuarios.Idusuario"  [ngModelOptions]="{standalone:true}" required>
+                <option *ngFor="let usuer of usuarios" [value]="usuer.idusuario">{{usuer.nombre}} </option>
+            </select>
+        </div>
+        <br>
+        <input type = "submit" class="btn btn-success" value = "Editar Usuario">
+    </form>
+</div>

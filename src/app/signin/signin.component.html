@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Crear Cuenta</h1>
+            <h1>Recuperar Contraseña</h1>
         </div>
         <div class="col-md-12">
             <hr>
@@ -17,17 +17,17 @@
     <br>
     </div>
 
-    <form (ngSubmit)="crear()" id="crear">
+    <form (ngSubmit)="recuperar()" id="recuperar">
         <div class="row">
             <div class="col-md-12">
-                <input type="email" [(ngModel)]="usuario.correo" [ngModelOptions]="{standalone: true}" placeholder="Usuario" class="form-control" required="">
+                <input type="password" [(ngModel)]="usuario.correo" [ngModelOptions]="{standalone: true}" placeholder="Contraseña" class="form-control" required="">
             </div>
 
         </div>
             <br>
         <div class="row">
             <div class="col-md-12">
-                <input type="password" [(ngModel)]="usuario.password" [ngModelOptions]="{standalone: true}" placeholder="Password" class="form-control" required="">
+                <input type="password" [(ngModel)]="usuario.password" [ngModelOptions]="{standalone: true}" placeholder="Repetir Password" class="form-control" required="">
             </div>
 
         </div>
@@ -35,7 +35,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <input class="btn btn-success float-right" type="submit" value="Crear">
+                <input class="btn btn-success float-right" type="submit" value="Recuperar">
             </div>
         </div>
     </form>

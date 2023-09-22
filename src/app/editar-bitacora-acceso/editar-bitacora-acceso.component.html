@@ -1,0 +1,61 @@
+<div class="container">
+    <h1>Editar Bitacora</h1>
+    <hr>
+    <a href="/home">Regresar</a>
+    <form (ngSubmit) = "formularioBitacora()" id = "loginFormBitacora">
+        <div class="form-group">
+            <label>Id: </label>
+            <input type = "number" class="form-control" [(ngModel)] = "bitacoras.idBitacoraAcceso" [ngModelOptions] = "{standalone: true}" required disabled=»disabled»>
+        </div>
+        <div class="form-group">
+            <label>Id Usuario: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "bitacoras.idUsuario" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Id tipo acceso: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "bitacoras.idTipoAcceso" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Fecha Acceso: </label>
+            <input type = "date" class="form-control" [(ngModel)] = "bitacoras.fechaAcceso" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>User Agent: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "bitacoras.httpUserAgent" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Dirección IP: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "bitacoras.direccionIp" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Acción: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "bitacoras.accion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Sistema Operativo: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "bitacoras.sistemaOperativo" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Dispositivo: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "bitacoras.dispositivo" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Navegador: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "bitacoras.browser" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Sesión: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "bitacoras.sesion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Asignado: </label>
+
+            <select  type="text" class="form-control" [(ngModel)]="bitacoras.idBitacoraAcceso"  [ngModelOptions]="{standalone:true}" required>
+                <option *ngFor="let usuer of bitacoras" [value]="usuer.idBitacoraAcceso">{{usuer.nombre}} </option>
+            </select>
+        </div>
+        <br>
+        <input type = "submit" class="btn btn-success" value = "Editar Bitacora">
+    </form>
+</div>
+

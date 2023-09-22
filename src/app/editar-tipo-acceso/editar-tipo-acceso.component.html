@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Editar Tipo Acceso</h1>
+    <hr>
+    <a href="/home">Regresar</a>
+    <form (ngSubmit) = "formularioTipoAcceso()" id = "loginFormTipoAcceso">
+        <div class="form-group">
+            <label>Id: </label>
+            <input type = "number" class="form-control" [(ngModel)] = "tipoAccesos.idTipoAcceso" [ngModelOptions] = "{standalone: true}" required disabled=»disabled»>
+        </div>
+        <div class="form-group">
+            <label>Nombre: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "tipoAccesos.nombre" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Fecha Creación: </label>
+            <input type = "date" class="form-control" [(ngModel)] = "tipoAccesos.fechaCreacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Creación: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "tipoAccesos.usuarioCreacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Fecha Modificación: </label>
+            <input type = "date" class="form-control" [(ngModel)] = "tipoAccesos.fechaModificacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Modificación: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "tipoAccesos.usuarioModificacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Usuario Asignado: </label>
+
+            <select  type="text" class="form-control" [(ngModel)]="tipoAccesos.idTipoAcceso"  [ngModelOptions]="{standalone:true}" required>
+                <option *ngFor="let usuer of tipoAccesos" [value]="usuer.idTipoAcceso">{{usuer.nombre}} </option>
+            </select>
+        </div>
+        <br>
+        <input type = "submit" class="btn btn-success" value = "Editar Tipo Acceso">
+    </form>
+</div>

@@ -7,9 +7,45 @@
             <hr>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <a href="#" (click)="logout()">Cerrar Sesión</a>
-        </div>
-    </div>
+    <h1>Usuarios</h1>
+  <hr>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id Usuario</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Fecha Nacimiento</th>
+            <th scope="col">Correo Electronico</th>
+            <th scope="col">Telefono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let user of usuarios">
+            <th scope="row">{{user.idUsuario}}</th>
+            <td>{{user.nombre}}</td>
+            <td>{{user.apellido}}</td>
+            <td>{{user.fechaNacimiento}}</td>
+            <td>{{user.correoElectronico}}</td>
+            <td>{{user.telefonoMovil}}</td>
+            <td>
+              <select  type="text" class="form-control" [(ngModel)]="user.idUsuario"  [ngModelOptions]="{standalone:true}" required disabled=»disabled»>
+                <option *ngFor="let usuer of usuarios" [value]="usuer.idUsuario">{{usuer.nombre}} 
+                </option>
+            </select>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger" (click)="eliminar(user)">Eliminar</button>
+              <button type="button" class="btn btn-info" (click)="editar(user)">Editar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <a href="/">Cerrar Sesión</a>
+      <hr>
+      <a href="/editar-usuario">Editar Usuario</a>
+      <hr>
+      <hr>
+      <a href="/crear-usuario">Crear Nuevo Usuario</a>
 </div>

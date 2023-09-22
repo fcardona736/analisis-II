@@ -16,8 +16,8 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  crear(){
-    let formulario:any = document.getElementById("crear");
+  recuperar(){
+    let formulario:any = document.getElementById("recuperar");
     let formularioValido:boolean = formulario.reportValidity();
     if(formularioValido){
       this.loading = true;
@@ -39,10 +39,10 @@ export class SigninComponent implements OnInit {
   confirmar(resultado:any){
     this.loading = false;
     if (resultado){
-      alert("Usuario Creado Exitosamente");
+      alert("Contraseña Recuperada Exitosamente");
       this.usuario = {};
     }else{
-      alert("Error al Crear Usuario");
+      alert("Error al Recuperar Contraseña");
     }
   }
 

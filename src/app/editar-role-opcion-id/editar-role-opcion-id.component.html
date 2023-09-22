@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Editar Opcion de Roles Id</h1>
+    <hr>
+    <a href="/home">Regresar</a>
+    <form (ngSubmit) = "formularioRoleOpcionId()" id = "loginFormRoleOpcionId">
+        <div class="form-group">
+            <label>Id Role: </label>
+            <input type = "number" class="form-control" [(ngModel)] = "roleOpcionsId.idRole" [ngModelOptions] = "{standalone: true}" required disabled=»disabled»>
+        </div>
+        <div class="form-group">
+            <label>Id Opcion: </label>
+            <input type = "number" class="form-control" [(ngModel)] = "roleOpcionsId.idOpcion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Usuario Asignado: </label>
+
+            <select  type="text" class="form-control" [(ngModel)]="roleOpcionsId.idRole"  [ngModelOptions]="{standalone:true}" required>
+                <option *ngFor="let usuer of roleOpcionsId" [value]="usuer.idRole">{{usuer.nombre}} </option>
+            </select>
+        </div>
+        <br>
+        <input type = "submit" class="btn btn-success" value = "Editar Opciones de Roles Id">
+    </form>
+</div>
+

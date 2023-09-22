@@ -1,0 +1,42 @@
+<div class="container">
+    <h1>Editar Modulo</h1>
+    <hr>
+    <a href="/home">Regresar</a>
+    <form (ngSubmit) = "formularioModulo()" id = "loginFormModulo">
+        <div class="form-group">
+            <label>Id Modulo: </label>
+            <input type = "number" class="form-control" [(ngModel)] = "modulos.idModulo" [ngModelOptions] = "{standalone: true}" required disabled=»disabled»>
+        </div>
+        <div class="form-group">
+            <label>Nombre: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "modulos.nombre" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Orden Menu: </label>
+            <input type = "number" class="form-control" [(ngModel)] = "modulos.ordenMenu" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Creación: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "modulos.usuarioCreacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Fecha Modificación: </label>
+            <input type = "date" class="form-control" [(ngModel)] = "modulos.fechaModificacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Modificación: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "modulos.usuarioModificacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Asignado: </label>
+
+            <select  type="text" class="form-control" [(ngModel)]="modulos.idGenero"  [ngModelOptions]="{standalone:true}" required>
+                <option *ngFor="let usuer of modulos" [value]="usuer.idGenero">{{usuer.nombre}} </option>
+            </select>
+        </div>
+        <br>
+        <input type = "submit" class="btn btn-success" value = "Editar Modulo">
+    </form>
+</div>
+
+

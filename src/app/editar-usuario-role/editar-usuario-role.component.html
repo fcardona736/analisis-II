@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Editar Usuario Role</h1>
+    <hr>
+    <a href="/home">Regresar</a>
+    <form (ngSubmit) = "formularioUsuarioRole()" id = "loginFormUsuarioRole">
+        <div class="form-group">
+            <label>Fecha Creación: </label>
+            <input type = "date" class="form-control" [(ngModel)] = "usuarioRoles.fechaCreacion" [ngModelOptions] = "{standalone: true}" required disabled=»disabled»>
+        </div>
+        <div class="form-group">
+            <label>Usuario Creación: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "usuarioRoles.usuarioCreacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Fecha Modificación: </label>
+            <input type = "date" class="form-control" [(ngModel)] = "usuarioRoles.fechaModificacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Modificación: </label>
+            <input type = "text" class="form-control" [(ngModel)] = "usuarioRoles.usuarioModificacion" [ngModelOptions] = "{standalone: true}" required>
+        </div>
+        <div class="form-group">
+            <label>Usuario Asignado: </label>
+
+            <select  type="text" class="form-control" [(ngModel)]="usuarioRoles.fechaCreacion"  [ngModelOptions]="{standalone:true}" required>
+                <option *ngFor="let usuer of usuarioRoles" [value]="usuer.fechaCreacion">{{usuer.nombre}} </option>
+            </select>
+        </div>
+        <br>
+        <input type = "submit" class="btn btn-success" value = "Editar Usuario Role">
+    </form>
+</div>
+
+
